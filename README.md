@@ -27,7 +27,7 @@ TablesToData is a Python project designed to clean, process, and convert tabular
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/TablesToData.git
+    git clone https://github.com/adolfzcoder/TablesToData.git
     cd TablesToData
     ```
 
