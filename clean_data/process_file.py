@@ -19,7 +19,8 @@ def parse_line(line):
 
     candidate_number = parts[0]
     center_location = candidate_number[2:4]
-    center_number = candidate_number[:2]
+    center_number = candidate_number[4:6]
+    last_4_digits = candidate_number[-4:]
     
     
     
@@ -70,6 +71,7 @@ def parse_line(line):
         "candidate_number": candidate_number,
         "center_number": f"{center_number}",
         "center_location": f"{center_location}",
+        "last_4_digits": f"{last_4_digits}",
         "points": f"{points}",
         "is_nssac": f"{is_nsscas}",
         "subject_count": f"{subject_count}"
@@ -95,7 +97,7 @@ def process_file(inp='storage/output2.txt', json_out='storage/output.json', csv_
     
     # Write to CSV file
     with open(csv_out, "w", newline='') as csv_file:
-        fieldnames = ["candidate_number", "center_number", "center_location", "points", "is_nssac", "subject_count"]
+        fieldnames = ["candidate_number", "center_number", "center_location", "last_4_digits", "points", "is_nssac", "subject_count"]
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         
         writer.writeheader()
