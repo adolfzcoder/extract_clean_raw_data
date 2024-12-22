@@ -18,6 +18,8 @@ def parse_line(line):
         return None
 
     candidate_number = parts[0]
+    center_location = candidate_number[2:4]
+    center_number = candidate_number[:2]
     
     
     
@@ -63,8 +65,11 @@ def parse_line(line):
         subject_count = sum(int(count) for count in subject_c)  # Count the number of subjects
     #print(f"\nCandidate number: {candidate_number}")
     #print(f"Points: {points}\n\n\n\n")
+    
     results.append({
         "candidate_number": candidate_number,
+        "center_number": f"{center_number}",
+        "center_location": f"{center_location}",
         "points": f"{points}",
         "is_nssac": f"{is_nsscas}",
         "subject_count": f"{subject_count}"
@@ -90,7 +95,7 @@ def process_file(inp='storage/output2.txt', json_out='storage/output.json', csv_
     
     # Write to CSV file
     with open(csv_out, "w", newline='') as csv_file:
-        fieldnames = ["candidate_number", "points", "is_nssac", "subject_count"]
+        fieldnames = ["candidate_number", "center_number", "center_location", "points", "is_nssac", "subject_count"]
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         
         writer.writeheader()

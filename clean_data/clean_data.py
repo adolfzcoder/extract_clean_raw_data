@@ -20,8 +20,8 @@ def clean_data(inp = "storage/results.txt", out="storage/output.txt"):
             
             if(len(row) > 1):
                 first, second = row[0], row[1]
-                print(f'{row[0]}')
-                print(f'{row[1]} \n')
+                #print(f'{row[0]}')
+                #print(f'{row[1]} \n')
                 
                 rows.append(first)
                 rows.append(second)
@@ -31,7 +31,7 @@ def clean_data(inp = "storage/results.txt", out="storage/output.txt"):
                 count += 2
             elif(len(row) == 1):
                 first = row[0]
-                print(f'{row[0]} "')
+                #print(f'{row[0]} "')
                 rows.append(first)
                 first_stripped = first.lstrip()
                 output.write(f'"   {first_stripped}   "\n')

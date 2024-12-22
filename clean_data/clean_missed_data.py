@@ -6,7 +6,7 @@ def clean_missed_data(inp='storage/output.txt', out='storage/output2.txt'):
         lines = input_file.readlines()
         for line in lines:
             if (len(line) < 40) or (bool(re.search(' """', line, 1))) or (bool(re.search('""', line, 1))) or ' """' in line  or ('"Science' in line):
-                print("Line is too short, clearing it", line)
+                #print("Line is too short, clearing it", line)
                 output.write("\n")
             else:
                 data = line.strip()
@@ -16,10 +16,10 @@ def clean_missed_data(inp='storage/output.txt', out='storage/output2.txt'):
                 if len(parts) > 1:
                     for part in parts:
                         output.write(f' "   {part.strip()}   "\n')
-                        print("Part:", part.strip())
+                        #print("Part:", part.strip())
                 else:
                     output.write(f'"{data}"\n')
-                    print("Data is already sorted:", data)
+                    #print("Data is already sorted:", data)
                     
                 
 
