@@ -27,8 +27,8 @@ TablesToData is a Python project designed to clean, process, and convert tabular
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/adolfzcoder/TablesToData.git
-    cd TablesToData
+    git clone https://github.com/adolfzcoder/extract_clean_raw_data.git
+    cd extract_clean_raw_data
     ```
 
 2. Install the required packages:
