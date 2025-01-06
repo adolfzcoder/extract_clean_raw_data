@@ -49,6 +49,27 @@ TablesToData is a Python project designed to clean, process, and convert tabular
 
 ### Example
 
+Raw data:
+"23OA020017       A02     Erenst Jager CS   1st Lang Khoek-      6098A     C   Eng 2nd Lang    6109A     D    Mathematics     6131A     U   Dev Studies    6136A     F    Geography     6137A     G   History           6138A     G                                 23OA060006   A06   Lordsville SS      Afrikaans 2nd Lang    6108A   A* Eng 2nd Lang    6109A   A*   Biology         6116A   A   Chemistry     6117A   B    Physics         6118A   B   Mathematics       6131A   C"
+
+Semi cleaned data (output.txt):
+   "23OA020017       A02     Erenst Jager CS   1st Lang Khoek-      6098A     C   Eng 2nd Lang    6109A     D    Mathematics     6131A     U   Dev Studies    6136A     F    Geography     6137A     G   History           6138A     G   "
+   23OA060006   A06   Lordsville SS      Afrikaans 2nd Lang    6108A   A* Eng 2nd Lang    6109A   A*   Biology         6116A   A   Chemistry     6117A   B    Physics         6118A   B   Mathematics       6131A   C"
+
+Full cleaned (otput.csv)
+ "   23OA060006   A06   Lordsville SS      Afrikaans 2nd Lang    6108A   A* Eng 2nd Lang    6109A   A*   Biology         6116A   A   Chemistry     6117A   B    Physics         6118A   B   Mathematics       6131A   C"   "
+
+
+How it looks in csv ( i selected specific columns to be here and applied it to it, but you can also change which columns you want)
+ie i chose
+index 0: candidate number
+index 1: center number (candidate_number[3:6])
+index 3: last 4 digits (candidate_number[-4:])
+23OA060006,06,OA,0006,40,False,6
+
+
+
+
 To clean and process the data, simply run:
 ```sh
 python main.py
